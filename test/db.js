@@ -40,3 +40,4 @@ const sequelize = new Sequelize(config.database, config.user, config.password, {
 
 exports.su = su;
 exports.sequelize = sequelize;
+exports.config = config;

@@ -16,6 +16,7 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
+        "bluebird": "~2.11.0",
         "chai": "^2.1.2",
         "chai-as-promised": "^5.3.0",
         "gulp": "^3.8.11",

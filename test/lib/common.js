@@ -3,6 +3,9 @@
 const db = require('../db');
 const su = require('../../lib');
 const sequelize = exports.sequelize = db.sequelize;
+const config = db.config;
+const pg = require('pg');
+const P = require('bluebird');
 
 exports.models = require('../test-models')(sequelize);
 
@@ -18,24 +21,33 @@ chai.use(require('sinon-chai'));
 exports.should = chai.should();
 exports.expect = chai.expect;
 
+before(function () {
+    return new P(function (resolve) {
+        pg.connect({
+            user: config.user,
+            host: config.host,
+            database: 'postgres'
+        }, function (err, client, done) {
+            if (err) {
+                done(true);
+                resolve(false);
+                return;
+            }
+
+            client.query(`CREATE DATABASE ${config.database}`, function (err) {
+                done(true);
+
+                if (err) {
+                    return resolve(false);
+                }
+
+                resolve(su.afterCreateDatabase(sequelize));
+            });
+        });
+    });
+});
+
 //always sync the db prior to running a test
 beforeEach(function () {
-    return sequelize.query(
-        `
-             CREATE OR REPLACE FUNCTION jsonb_deep_merge(original jsonb, current jsonb)
-             RETURNS JSONB LANGUAGE SQL AS $$
-             SELECT
-             jsonb_object_agg(
-                 coalesce(oKey, cKey),
-                 case
-                     WHEN oValue isnull THEN cValue
-                     WHEN cValue isnull THEN oValue
-                     WHEN jsonb_typeof(oValue) <> 'object' or jsonb_typeof(cValue) <> 'object' THEN cValue
-                     ELSE jsonb_deep_merge(oValue, cValue) END
-                 )
-             FROM jsonb_each(original) e1(oKey, oValue)
-             FULL JOIN jsonb_each(current) e2(cKey, cValue) ON oKey = cKey
-         $$;
-        `
-    ).then(() => sequelize.sync({ force: true }));
+    return sequelize.sync({ force: true });
 });
