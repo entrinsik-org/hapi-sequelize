@@ -48,8 +48,5 @@
         "pg-large-object": "1.0.1",
         "sequelize": "3.27.x",
         "slug": "^0.9.1"
-    },
-    "optionalDependencies": {
-        "pg-native": "^1.10.0"
     }
 }
