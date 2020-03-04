@@ -63,8 +63,7 @@ describe('bulk upsert plugin', function () {
                             f.should.have.property('immutableAttr', `immutable value ${idx}`);
                             f.should.have.property('name', `My Foo ${idx}`);
                             f.deepMerge[idx][`${idx}property`].should.equal(idx);
-                        })
-                        .value();
+                        });
                 });
         });
 
@@ -95,10 +94,8 @@ describe('bulk upsert plugin', function () {
                             f.should.have.property('immutableAttr', `immutable value ${idx}`);
                             f.should.have.property('name', `My Foo ${idx}`);
                             f.deepMerge[idx][`${idx}property`].should.equal(idx);
-                        })
-                        .value();
-                })
-                ;
+                        });
+                });
         });
 
         it('should update from a stream', function () {
@@ -936,8 +933,7 @@ describe('bulk upsert plugin', function () {
                             } else {
                                 throw new Error(`Got an unknown id: ${foo.id}`);
                             }
-                        })
-                        .value();
+                        });
                 });
         });
 
