@@ -28,15 +28,19 @@ su.enableRequiresTransaction();
  */
 const config = {
     host: 'localhost',
+    port: 5432,
     database: 'hapi_sequelize',
+    // password: '',
     user: 'i5'
 };
 
 const sequelize = new Sequelize(config.database, config.user, config.password, {
     host: config.host,
+    port: config.port,
     //logging: false,
     dialect: 'postgres'
 });
+su.separateHasManyAssociationHook(sequelize);
 
 exports.su = su;
 exports.sequelize = sequelize;
