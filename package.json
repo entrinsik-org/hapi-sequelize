@@ -46,6 +46,7 @@
         "moniker": "^0.1.2",
         "pg-copy-streams": "^1.2.0",
         "pg-large-object": "1.0.1",
+        "retry-as-promised": "^3.2.0",
         "sequelize": "3.27.x",
         "slug": "^0.9.1"
     }
