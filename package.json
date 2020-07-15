@@ -42,7 +42,7 @@
         "ent-utils": "^4.4.0",
         "glib": "^1.0.0",
         "joi": "^9.0.4",
-        "lodash": "^3.9.3",
+        "lodash": "^4.17.19",
         "moniker": "^0.1.2",
         "pg-copy-streams": "^1.2.0",
         "pg-large-object": "1.0.1",
