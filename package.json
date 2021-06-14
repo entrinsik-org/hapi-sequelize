@@ -1,6 +1,6 @@
 {
     "name": "ent-hapi-sequelize",
-    "version": "7.8.1",
+    "version": "8.0.0",
     "description": "Sequelize utilities for hapi",
     "main": "lib/index.js",
     "directories": {
@@ -47,7 +47,7 @@
         "pg-copy-streams": "^1.2.0",
         "pg-large-object": "1.0.1",
         "retry-as-promised": "^3.2.0",
-        "sequelize": "3.27.x",
+        "@entrinsik/informer-sequelize": "~3.35.1",
         "slug": "^0.9.1"
     }
 }
