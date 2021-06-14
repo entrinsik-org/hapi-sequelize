@@ -1,6 +1,6 @@
 {
     "name": "ent-hapi-sequelize",
-    "version": "8.0.0",
+    "version": "7.8.1",
     "description": "Sequelize utilities for hapi",
     "main": "lib/index.js",
     "directories": {
@@ -31,12 +31,13 @@
         "inject-then": "^2.0.0",
         "jshint-stylish": "^1.0.1",
         "mocha": "^2.2.1",
-        "pg": "^8.0.0",
+        "pg": "~8.5.1",
         "pg-hstore": "^2.3.2",
         "sinon": "^1.13.0",
         "sinon-chai": "^2.8.0"
     },
     "dependencies": {
+        "@entrinsik/informer-sequelize": "~3.35.1",
         "boom": "^4.2.0",
         "ent-streams": "^1.11.0",
         "ent-utils": "^4.4.0",
@@ -47,7 +48,6 @@
         "pg-copy-streams": "^1.2.0",
         "pg-large-object": "1.0.1",
         "retry-as-promised": "^3.2.0",
-        "@entrinsik/informer-sequelize": "~3.35.1",
         "slug": "^0.9.1"
     }
 }
