@@ -22,12 +22,13 @@ exports.should = chai.should();
 exports.expect = chai.expect;
 
 before(function () {
+    const pool = new pg.Pool({
+        user: config.user,
+        host: config.host,
+        database: 'postgres'
+    });
     return new P(function (resolve) {
-        pg.connect({
-            user: config.user,
-            host: config.host,
-            database: 'postgres'
-        }, function (err, client, done) {
+        pool.connect(function (err, client, done) {
             if (err) {
                 done(true);
                 resolve(false);

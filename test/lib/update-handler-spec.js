@@ -8,7 +8,7 @@ chai.use(require('sinon-chai'));
 var _ = require('lodash');
 var factory = require('../../lib/update-handler');
 var joi = require('joi');
-var Sequelize = require('sequelize');
+var Sequelize = require('@entrinsik/informer-sequelize');
 var hapi = require('hapi');
 
 describe('Generic Update Handler', function () {

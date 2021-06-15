@@ -7,7 +7,7 @@ chai.use(require('sinon-chai'));
 var _ = require('lodash');
 var factory = require('../../lib/remove-handler');
 var joi = require('joi');
-var Sequelize = require('sequelize');
+var Sequelize = require('@entrinsik/informer-sequelize');
 var P = Sequelize.Promise;
 var hapi = require('hapi');
 

@@ -7,7 +7,7 @@ chai.use(require('sinon-chai'));
 const _ = require('lodash');
 const factory = require('../../lib/lookup-handler');
 const joi = require('joi');
-const Sequelize = require('sequelize');
+const Sequelize = require('@entrinsik/informer-sequelize');
 const hapi = require('hapi');
 
 describe('Generic Lookup Handler', function () {
