@@ -37,7 +37,7 @@
         "sinon-chai": "^2.8.0"
     },
     "dependencies": {
-        "@entrinsik/informer-sequelize": "~3.35.1",
+        "@entrinsik/informer-sequelize": "~3.36.0",
         "boom": "^4.2.0",
         "ent-streams": "^1.11.0",
         "ent-utils": "^4.4.0",
